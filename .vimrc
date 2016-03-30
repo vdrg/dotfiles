@@ -8,7 +8,8 @@ Plugin 'gmarik/Vundle.vim' " required
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'flazz/vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chrisbra/Colorizer'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
@@ -26,18 +27,20 @@ set showcmd
 
 " Indenting
 set autoindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 
 " Color scheme
-set t_Co=256
-colorscheme monokai
+"let base16colorspace=256
+"set t_Co=256
+set background=dark
+colorscheme solarized
 
 " vim-airline 
 let g:airline_powerline_fonts = 1
 set laststatus=2
-let g:airline_theme='zenburn'
+let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
