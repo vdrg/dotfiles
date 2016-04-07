@@ -4,17 +4,30 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'gmarik/Vundle.vim' " required
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chrisbra/Colorizer'
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'majutsushi/tagbar'
 Plugin 'Raimondi/delimitMate'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'helino/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'rking/ag.vim'
+Plugin 'chrisbra/Colorizer'
+Plugin 'mxw/vim-jsx'
+
+"Style
+Plugin 'mhinz/vim-startify'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -24,11 +37,12 @@ set number
 set incsearch
 set hlsearch
 set showcmd
+set encoding=utf-8
 
 " Indenting
 set autoindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " Color scheme
@@ -48,32 +62,9 @@ endif
 let g:airline_symbols.space = "\ua0"
 let g:airline#extensions#whitespace#enabled = 0
 
-" ntrw
-function! ToggleVExplorer()
-    if exists("t:expl_buf_num")
-        let expl_win_num = bufwinnr(t:expl_buf_num)
-        if expl_win_num != -1
-            exec expl_win_num . 'wincmd w'
-            close
-            exec '1wincmd p'
-            unlet t:expl_buf_num
-        else
-            unlet t:expl_buf_num
-        endif
-    else
-        exec '1wincmd w'
-        Vexplore
-        let t:expl_buf_num = bufnr("%")
-    endif
-endfunction
-let g:netrw_browse_split = 4 
-let g:netrw_altv = 1
-let g:netrw_liststyle=3
-let g:netrw_banner = 0
-let g:netrw_winsize = -28
+
 set autochdir
 
-" NeoComplete
 
 " Tags
 set tags=./tags,tags;
@@ -81,7 +72,24 @@ set tags=./tags,tags;
 " DelimitMate
 let delimitMate_expand_cr = 1
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
+
+"jsx
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
+
+"YCM
+let g:ycm_server_python_interpreter = "/usr/bin/python3"
+
 " Mappings
 let mapleader = "," 
-map <silent> <C-E> :call ToggleVExplorer()<CR>
-
+map <C-e> :NERDTreeToggle<CR>
