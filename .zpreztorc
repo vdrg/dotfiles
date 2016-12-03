@@ -1,1 +1,23 @@
+zstyle ':prezto:load' pmodule \
+         'environment' \
+         'terminal' \
+         'editor' \
+         'history' \
+         'directory' \
+         'spectrum' \
+         'utility' \
+         'completion' \
+         'archive' \
+         'tmux' \
+         'git' \
+         'osx' \
+         'node' \
+         'homebrew' \
+         'python' \
+         'ruby' \
+         'rails' \
+         'fasd'   \
+         'syntax-highlighting' \
+         'history-substring-search' \
+         'prompt'
 zstyle ':prezto:module:prompt' theme 'minimal'
