@@ -1,0 +1,14 @@
+
+set scroll-page-aware "true"
+set smooth-scroll "true"
+
+set completion-bg "#282828"
+set completion-fg "#ebdbb2"
+set completion-group-bg "#32302f"
+set completion-group-fg "#ebdbb2"
+set completion-highlight-bg "#665c54"
+set completion-highlight-fg "#fbf1c7"
+
+set inputbar-bg "#282828"
+set inputbar-fg "#ebdbb2"
+

@@ -1,0 +1,31 @@
+
+rofi.location: 0
+rofi.bw: 0
+rofi.padding: 600
+
+rofi.font: Source Code Pro 24
+
+rofi.lines: 19
+rofi.line-margin: 20
+!rofi.eh: 2
+
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.fullscreen: true
+
+
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! User: milouse
+! Copyright: Étienne Deparis
+! ------------------------------------------------------------------------------
+! Enable the extended coloring options
+rofi.color-enabled: true
+!                  bg             border   separator
+rofi.color-window: #de282828, #a89984, #a89984
+
+!                  bg       fg       bg-alt   hl-bg    hl-fg
+rofi.color-normal: #00282828, #ebdbb2, #0032302f, #77665c54, #fbf1c7
+rofi.color-active: #d79921, #282828, #d79921, #fabd2f, #282828
+rofi.color-urgent: #cc241d, #282828, #cc241d, #fb4934, #282828
